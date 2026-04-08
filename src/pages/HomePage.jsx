@@ -92,6 +92,13 @@ export default function HomePage() {
               >
                 {loading ? "Please wait..." : "Continue"}
               </button>
+
+              <button
+                onClick={() => navigate("/view")}
+                className="w-full rounded-2xl border bg-white/50 text-slate-700 py-3.5 font-bold transition hover:bg-white active:scale-[0.99]"
+              >
+                View Attendance
+              </button>
             </div>
           </div>
         </div>
