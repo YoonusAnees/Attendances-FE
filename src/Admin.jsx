@@ -5,7 +5,7 @@ export default function Admin() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/participants")
+    axios.get(`${import.meta.env.VITE_API}/api/participants`)
       .then(res => setData(res.data));
   }, []);
 

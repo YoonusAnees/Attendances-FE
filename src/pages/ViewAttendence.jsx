@@ -12,7 +12,7 @@ export default function ViewAttendence() {
   const loadParticipants = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/participants");
+      const res = await axios.get(`${import.meta.env.VITE_API}/api/participants`);
       setParticipants(res.data);
     } catch (error) {
       console.error(error);

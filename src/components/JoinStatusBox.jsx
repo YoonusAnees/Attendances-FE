@@ -15,7 +15,7 @@ export default function JoinStatusBox({
       setLoading(true);
 
       const res = await axios.put(
-        `http://localhost:5000/api/participants/${participantId}/attendance`,
+        `${import.meta.env.VITE_API}/api/participants/${participantId}/attendance`,
         { attending: status }
       );
 
