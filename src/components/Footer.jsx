@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="h-1.5 w-16 rounded-full bg-gradient-to-r from-blue-500 via-sky-400 to-indigo-500" />
             <p className="text-sm sm:text-base text-slate-600">
               Developed By{" "}
-              <span className="font-bold bg-gradient-to-r bg-clip-text text-transparent">
+              <span className="font-bold  bg-clip-text  text-amber-950">
                 Yoonus Anees
               </span>
             </p>
