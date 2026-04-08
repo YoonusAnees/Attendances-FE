@@ -12,7 +12,9 @@ export default function ViewAttendence() {
   const loadParticipants = async () => {
     try {
       setLoading(true);
-      const res = await axios.get(`${import.meta.env.VITE_API}/api/participants`);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API}/api/participants`,
+      );
       setParticipants(res.data);
     } catch (error) {
       console.error(error);
@@ -53,7 +55,7 @@ export default function ViewAttendence() {
 
               <div className="grid grid-cols-2 gap-3 sm:flex">
                 <button
-                  onClick={() => navigate("/schedule")}
+                  onClick={() => navigate("/")}
                   className="rounded-2xl border border-slate-300 bg-white px-4 py-3 font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50"
                 >
                   Back
