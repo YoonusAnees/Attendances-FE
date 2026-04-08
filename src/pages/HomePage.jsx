@@ -35,13 +35,10 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#dbeafe,_#e2e8f0_35%,_#f8fafc_75%)] flex flex-col">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       <div className="flex-1 flex items-center justify-center px-4 py-8 sm:py-12">
         <div className="w-full max-w-md sm:max-w-lg">
-          <div className="relative overflow-hidden rounded-[32px] border border-white/70 bg-white/85 backdrop-blur-xl shadow-[0_25px_80px_rgba(15,23,42,0.12)] p-5 sm:p-7 md:p-9">
-            <div className="absolute -top-16 -right-16 h-36 w-36 rounded-full bg-blue-200/50 blur-3xl" />
-            <div className="absolute -bottom-16 -left-12 h-36 w-36 rounded-full bg-sky-200/50 blur-3xl" />
-
+          <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.12)] p-5 sm:p-7 md:p-9">
             <div className="relative z-10 text-center mb-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm">
                 <span>🎓</span>
@@ -88,7 +85,7 @@ export default function HomePage() {
               <button
                 onClick={handleContinue}
                 disabled={loading}
-                className="w-full rounded-2xl bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 text-white py-3.5 font-bold shadow-[0_16px_40px_rgba(37,99,235,0.30)] transition hover:-translate-y-0.5 active:scale-[0.99] disabled:opacity-60"
+                className="w-full rounded-2xl bg-blue-600 text-white py-3.5 font-bold shadow-md transition hover:-translate-y-0.5 active:scale-[0.99] disabled:opacity-60"
               >
                 {loading ? "Please wait..." : "Continue"}
               </button>

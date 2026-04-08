@@ -33,10 +33,10 @@ export default function ViewAttendence() {
   const pendingPeople = participants.filter((p) => p.attending === null);
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#dbeafe,_#e2e8f0_35%,_#f8fafc_75%)] flex flex-col">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       <div className="flex-1 px-4 py-5 sm:py-8">
         <div className="max-w-6xl mx-auto">
-          <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/88 backdrop-blur-xl shadow-[0_25px_80px_rgba(15,23,42,0.10)] p-5 sm:p-7 md:p-9">
+          <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-md p-5 sm:p-7 md:p-9">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm">
@@ -63,7 +63,7 @@ export default function ViewAttendence() {
 
                 <button
                   onClick={loadParticipants}
-                  className="rounded-2xl bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 text-white px-4 py-3 font-semibold shadow-lg shadow-blue-500/20 transition hover:-translate-y-0.5"
+                  className="rounded-2xl bg-blue-600 text-white px-4 py-3 font-semibold shadow-md transition hover:-translate-y-0.5"
                 >
                   Refresh
                 </button>
@@ -133,14 +133,14 @@ export default function ViewAttendence() {
 
 function StatCard({ title, value, color, icon }) {
   const styles = {
-    green: "from-emerald-50 to-green-100 border-green-200 text-green-900",
-    red: "from-rose-50 to-red-100 border-red-200 text-red-900",
-    yellow: "from-amber-50 to-yellow-100 border-yellow-200 text-yellow-900",
+    green: "bg-green-50 border-green-200 text-green-900",
+    red: "bg-red-50 border-red-200 text-red-900",
+    yellow: "bg-yellow-50 border-yellow-200 text-yellow-900",
   };
 
   return (
     <div
-      className={`rounded-[28px] border bg-gradient-to-br ${styles[color]} p-5 shadow-sm`}
+      className={`rounded-[28px] border ${styles[color]} p-5 shadow-sm`}
     >
       <div className="flex items-center justify-between">
         <div>

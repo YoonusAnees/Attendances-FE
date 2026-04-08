@@ -46,7 +46,7 @@ export default function SchedulePage() {
   if (!participant) return null;
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#dbeafe,_#e2e8f0_35%,_#f8fafc_75%)] flex flex-col">
+    <div className="min-h-screen bg-slate-50 flex flex-col">
       <JoinStatusBox
         participantId={participant._id}
         currentStatus={participant.attending}
@@ -55,7 +55,7 @@ export default function SchedulePage() {
 
       <div className="flex-1 px-4 py-5 sm:py-8">
         <div className="max-w-5xl mx-auto pt-2 sm:pt-20">
-          <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/88 backdrop-blur-xl shadow-[0_25px_80px_rgba(15,23,42,0.10)] p-5 sm:p-7 md:p-9">
+          <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-md p-5 sm:p-7 md:p-9">
             <div className="mb-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm">
                 <span>📅</span>
@@ -76,11 +76,11 @@ export default function SchedulePage() {
               {programSchedule.map((item, index) => (
                 <div
                   key={index}
-                  className="group rounded-[28px] border border-slate-200/80 bg-gradient-to-r from-white to-blue-50/60 p-4 sm:p-5 shadow-sm transition hover:shadow-md"
+                  className="group rounded-[28px] border border-slate-200 bg-white p-4 sm:p-5 shadow-sm transition hover:shadow-md"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
                     <div className="sm:min-w-[180px]">
-                      <div className="inline-flex rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs sm:text-sm font-bold px-4 py-2 shadow-lg shadow-blue-500/20">
+                      <div className="inline-flex rounded-full bg-blue-600 text-white text-xs sm:text-sm font-bold px-4 py-2 shadow-md">
                         {item.time}
                       </div>
                     </div>
@@ -103,7 +103,7 @@ export default function SchedulePage() {
 
               <button
                 onClick={() => navigate("/view")}
-                className="w-full rounded-2xl bg-gradient-to-r from-slate-900 to-slate-700 text-white px-5 py-3.5 font-semibold shadow-lg transition hover:-translate-y-0.5"
+                className="w-full rounded-2xl bg-slate-800 text-white px-5 py-3.5 font-semibold shadow-md transition hover:-translate-y-0.5"
               >
                 Go to View Attendance
               </button>

@@ -44,7 +44,7 @@ export default function JoinStatusBox({
       {!hidden && (
         <>
           <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:hidden">
-            <div className="rounded-[26px] border border-white/70 bg-white/95 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.18)] p-4">
+            <div className="rounded-[26px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.18)] p-4">
               <div className="flex items-center justify-between gap-3 mb-3">
                 <div>
                   <p className="text-sm font-semibold text-slate-900">
@@ -54,7 +54,7 @@ export default function JoinStatusBox({
                     Confirm your attendance
                   </p>
                 </div>
-                <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center shadow-lg">
+                <div className="h-10 w-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md">
                   🎊
                 </div>
               </div>
@@ -63,7 +63,7 @@ export default function JoinStatusBox({
                 <button
                   disabled={loading}
                   onClick={() => handleAttendance(true)}
-                  className="rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 text-white py-3 text-sm font-semibold shadow-lg shadow-green-500/25 transition active:scale-[0.98] disabled:opacity-60"
+                  className="rounded-2xl bg-emerald-600 text-white py-3 text-sm font-semibold shadow-md transition active:scale-[0.98] disabled:opacity-60"
                 >
                   Yes
                 </button>
@@ -71,7 +71,7 @@ export default function JoinStatusBox({
                 <button
                   disabled={loading}
                   onClick={() => handleAttendance(false)}
-                  className="rounded-2xl bg-gradient-to-r from-rose-500 to-red-600 text-white py-3 text-sm font-semibold shadow-lg shadow-red-500/25 transition active:scale-[0.98] disabled:opacity-60"
+                  className="rounded-2xl bg-rose-600 text-white py-3 text-sm font-semibold shadow-md transition active:scale-[0.98] disabled:opacity-60"
                 >
                   No
                 </button>
@@ -80,9 +80,9 @@ export default function JoinStatusBox({
           </div>
 
           <div className="hidden sm:block fixed top-5 right-5 z-50 w-[340px]">
-            <div className="rounded-[28px] border border-white/70 bg-white/92 backdrop-blur-xl shadow-[0_24px_70px_rgba(15,23,42,0.18)] p-5">
+            <div className="rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] p-5">
               <div className="flex items-start gap-3 mb-4">
-                <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center text-lg shadow-lg">
+                <div className="h-12 w-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-lg shadow-md">
                   ✨
                 </div>
                 <div>
@@ -99,7 +99,7 @@ export default function JoinStatusBox({
                 <button
                   disabled={loading}
                   onClick={() => handleAttendance(true)}
-                  className="rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 text-white py-3 text-sm font-semibold shadow-lg shadow-green-500/25 transition hover:-translate-y-0.5 disabled:opacity-60"
+                  className="rounded-2xl bg-emerald-600 text-white py-3 text-sm font-semibold shadow-md transition hover:-translate-y-0.5 disabled:opacity-60"
                 >
                   Yes
                 </button>
@@ -107,7 +107,7 @@ export default function JoinStatusBox({
                 <button
                   disabled={loading}
                   onClick={() => handleAttendance(false)}
-                  className="rounded-2xl bg-gradient-to-r from-rose-500 to-red-600 text-white py-3 text-sm font-semibold shadow-lg shadow-red-500/25 transition hover:-translate-y-0.5 disabled:opacity-60"
+                  className="rounded-2xl bg-rose-600 text-white py-3 text-sm font-semibold shadow-md transition hover:-translate-y-0.5 disabled:opacity-60"
                 >
                   No
                 </button>
