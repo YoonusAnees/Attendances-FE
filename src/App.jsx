@@ -1,0 +1,16 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SchedulePage from "./pages/SchedulePage";
+import ViewAttendence from "./pages/ViewAttendence";
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/schedule" element={<SchedulePage />} />
+        <Route path="/view" element={<ViewAttendence />} />
+      </Routes>
+    </Router>
+  );
+}

@@ -1,0 +1,120 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import JoinStatusBox from "../components/JoinStatusBox";
+import Footer from "../components/Footer";
+
+const programSchedule = [
+  {
+    time: "11:30 - 12:00",
+    activity: "Quran reciting, welcome drink, welcome speech, school anthem",
+  },
+  { time: "12:00 - 12:30", activity: "Prayers" },
+  { time: "12:30 - 2:00", activity: "Knowledge Sharing Session" },
+  { time: "2:00 - 2:30", activity: "Lunch" },
+  { time: "2:30 - 3:00", activity: "Ornament Giving" },
+  { time: "3:00 - 3:30", activity: "Cake Cutting" },
+  { time: "4:00 - 4:10", activity: "End Speech" },
+  { time: "4:10 - 4:30", activity: "Group Photo" },
+  { time: "4:30 - 5:00", activity: "Tea Party" },
+];
+
+export default function SchedulePage() {
+  const [participant, setParticipant] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const savedParticipant = localStorage.getItem("participant");
+
+    if (!savedParticipant) {
+      navigate("/");
+      return;
+    }
+
+    setParticipant(JSON.parse(savedParticipant));
+  }, [navigate]);
+
+  const handleStatusChange = (newStatus) => {
+    const updatedParticipant = {
+      ...participant,
+      attending: newStatus,
+    };
+
+    setParticipant(updatedParticipant);
+    localStorage.setItem("participant", JSON.stringify(updatedParticipant));
+  };
+
+  if (!participant) return null;
+
+  return (
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,_#dbeafe,_#e2e8f0_35%,_#f8fafc_75%)] flex flex-col">
+      <JoinStatusBox
+        participantId={participant._id}
+        currentStatus={participant.attending}
+        onStatusChange={handleStatusChange}
+      />
+
+      <div className="flex-1 px-4 py-5 sm:py-8">
+        <div className="max-w-5xl mx-auto pt-2 sm:pt-20">
+          <div className="overflow-hidden rounded-[32px] border border-white/70 bg-white/88 backdrop-blur-xl shadow-[0_25px_80px_rgba(15,23,42,0.10)] p-5 sm:p-7 md:p-9">
+            <div className="mb-7">
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm">
+                <span>📅</span>
+                <span>Programme Schedule</span>
+              </div>
+
+              <h1 className="mt-4 text-2xl sm:text-3xl font-extrabold text-slate-900">
+                Welcome, {participant.title} {participant.name}
+              </h1>
+
+              <p className="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed">
+                Here is the reunion schedule for the day. Please review the
+                programme below.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {programSchedule.map((item, index) => (
+                <div
+                  key={index}
+                  className="group rounded-[28px] border border-slate-200/80 bg-gradient-to-r from-white to-blue-50/60 p-4 sm:p-5 shadow-sm transition hover:shadow-md"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
+                    <div className="sm:min-w-[180px]">
+                      <div className="inline-flex rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs sm:text-sm font-bold px-4 py-2 shadow-lg shadow-blue-500/20">
+                        {item.time}
+                      </div>
+                    </div>
+
+                    <div className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+                      {item.activity}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <button
+                onClick={() => navigate("/")}
+                className="w-full rounded-2xl border border-slate-300 bg-white px-5 py-3.5 font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50"
+              >
+                Back Home
+              </button>
+
+              <button
+                onClick={() => navigate("/view")}
+                className="w-full rounded-2xl bg-gradient-to-r from-slate-900 to-slate-700 text-white px-5 py-3.5 font-semibold shadow-lg transition hover:-translate-y-0.5"
+              >
+                Go to View Attendance
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="pb-20 sm:pb-0">
+        <Footer />
+      </div>
+    </div>
+  );
+}
