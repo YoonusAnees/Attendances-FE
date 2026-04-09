@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { FaGlassCheers, FaStar } from "react-icons/fa";
 
 export default function JoinStatusBox({
   participantId,
@@ -55,7 +56,7 @@ export default function JoinStatusBox({
                   </p>
                 </div>
                 <div className="h-10 w-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md">
-                  🎊
+                  <FaGlassCheers className="text-xl" />
                 </div>
               </div>
 
@@ -83,7 +84,7 @@ export default function JoinStatusBox({
             <div className="rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] p-5">
               <div className="flex items-start gap-3 mb-4">
                 <div className="h-12 w-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-lg shadow-md">
-                  ✨
+                  <FaStar />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-slate-900">

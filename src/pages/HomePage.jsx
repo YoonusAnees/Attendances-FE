@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaGraduationCap } from "react-icons/fa";
 import Footer from "../components/Footer";
 
 export default function HomePage() {
@@ -41,7 +42,7 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-[0_25px_80px_rgba(15,23,42,0.12)] p-5 sm:p-7 md:p-9">
             <div className="relative z-10 text-center mb-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm">
-                <span>🎓</span>
+                <FaGraduationCap className="text-blue-600" />
                 <span>Reunion Event</span>
               </div>
 

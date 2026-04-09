@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import JoinStatusBox from "../components/JoinStatusBox";
+import { FaCalendarAlt } from "react-icons/fa";
 import Footer from "../components/Footer";
 
 const programSchedule = [
@@ -62,7 +63,7 @@ export default function SchedulePage() {
           <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-white shadow-md p-5 sm:p-7 md:p-9">
             <div className="mb-7">
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs sm:text-sm font-semibold text-blue-700 shadow-sm">
-                <span>📅</span>
+                <FaCalendarAlt className="text-blue-600" />
                 <span>Programme Schedule</span>
               </div>
 
