@@ -13,7 +13,7 @@ const programSchedule = [
   {
     time: "12:30 - 2:00",
     activity:
-      "Knowledge Sharing Session (Where Teachers Share Their Journeys , Experiences , and Life Lessons)",
+      "Knowledge Sharing Session (Where Teachers Share Their Journeys, Experiences, and Life Lessons)",
   },
   { time: "2:00 - 2:30", activity: "Lunch" },
   { time: "2:30 - 3:00", activity: "Ornament Giving" },

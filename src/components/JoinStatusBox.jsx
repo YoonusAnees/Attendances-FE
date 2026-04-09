@@ -8,8 +8,9 @@ export default function JoinStatusBox({
   onStatusChange,
 }) {
   const [popup, setPopup] = useState(null);
-  const [hidden, setHidden] = useState(currentStatus !== null);
   const [loading, setLoading] = useState(false);
+
+  const hasResponded = currentStatus === true || currentStatus === false;
 
   const handleAttendance = async (status) => {
     try {
@@ -21,7 +22,6 @@ export default function JoinStatusBox({
       );
 
       onStatusChange(res.data.attending);
-      setHidden(true);
 
       if (status) {
         setPopup("🎉 Thank you! See you on April 11");
@@ -42,8 +42,9 @@ export default function JoinStatusBox({
 
   return (
     <>
-      {!hidden && (
+      {!hasResponded && (
         <>
+          {/* MOBILE */}
           <div className="fixed inset-x-0 bottom-0 z-50 px-3 pb-3 sm:hidden">
             <div className="rounded-[26px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.18)] p-4">
               <div className="flex items-center justify-between gap-3 mb-3">
@@ -55,6 +56,7 @@ export default function JoinStatusBox({
                     Confirm your attendance
                   </p>
                 </div>
+
                 <div className="h-10 w-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md">
                   <FaGlassCheers className="text-xl" />
                 </div>
@@ -66,7 +68,7 @@ export default function JoinStatusBox({
                   onClick={() => handleAttendance(true)}
                   className="rounded-2xl bg-emerald-600 text-white py-3 text-sm font-semibold shadow-md transition active:scale-[0.98] disabled:opacity-60"
                 >
-                  Yes
+                  {loading ? "Saving..." : "Yes"}
                 </button>
 
                 <button
@@ -74,18 +76,20 @@ export default function JoinStatusBox({
                   onClick={() => handleAttendance(false)}
                   className="rounded-2xl bg-rose-600 text-white py-3 text-sm font-semibold shadow-md transition active:scale-[0.98] disabled:opacity-60"
                 >
-                  No
+                  {loading ? "Saving..." : "No"}
                 </button>
               </div>
             </div>
           </div>
 
+          {/* DESKTOP */}
           <div className="hidden sm:block fixed top-5 right-5 z-50 w-[340px]">
             <div className="rounded-[28px] border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.18)] p-5">
               <div className="flex items-start gap-3 mb-4">
                 <div className="h-12 w-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-lg shadow-md">
                   <FaStar />
                 </div>
+
                 <div>
                   <h3 className="text-base font-bold text-slate-900">
                     Are you joining?
@@ -102,7 +106,7 @@ export default function JoinStatusBox({
                   onClick={() => handleAttendance(true)}
                   className="rounded-2xl bg-emerald-600 text-white py-3 text-sm font-semibold shadow-md transition hover:-translate-y-0.5 disabled:opacity-60"
                 >
-                  Yes
+                  {loading ? "Saving..." : "Yes"}
                 </button>
 
                 <button
@@ -110,7 +114,7 @@ export default function JoinStatusBox({
                   onClick={() => handleAttendance(false)}
                   className="rounded-2xl bg-rose-600 text-white py-3 text-sm font-semibold shadow-md transition hover:-translate-y-0.5 disabled:opacity-60"
                 >
-                  No
+                  {loading ? "Saving..." : "No"}
                 </button>
               </div>
             </div>

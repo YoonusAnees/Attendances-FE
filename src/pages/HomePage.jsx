@@ -20,16 +20,19 @@ export default function HomePage() {
     try {
       setLoading(true);
 
-      const res = await axios.post(`${import.meta.env.VITE_API}/api/participants`, {
-        title,
-        name: name.trim(),
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API}/api/participants`,
+        {
+          title,
+          name: name.trim(),
+        },
+      );
 
       localStorage.setItem("participant", JSON.stringify(res.data));
       navigate("/schedule");
     } catch (error) {
       console.error(error);
-      alert("Failed to save participant");
+      alert("Failed to continue");
     } finally {
       setLoading(false);
     }
