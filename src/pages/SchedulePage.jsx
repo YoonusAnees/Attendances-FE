@@ -9,7 +9,11 @@ const programSchedule = [
     activity: "Quran reciting, welcome drink, welcome speech, school anthem",
   },
   { time: "12:00 - 12:30", activity: "Prayers" },
-  { time: "12:30 - 2:00", activity: "Knowledge Sharing Session" },
+  {
+    time: "12:30 - 2:00",
+    activity:
+      "Knowledge Sharing Session (Where Teachers Share Their Journeys , Experiences , and Life Lessons)",
+  },
   { time: "2:00 - 2:30", activity: "Lunch" },
   { time: "2:30 - 3:00", activity: "Ornament Giving" },
   { time: "3:00 - 3:30", activity: "Cake Cutting" },
